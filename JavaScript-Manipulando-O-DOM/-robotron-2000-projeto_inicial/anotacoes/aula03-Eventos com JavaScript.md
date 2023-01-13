@@ -1,4 +1,4 @@
-# Eventos com JavaScript
+# Eventos com JavaScript 2.04
 
 Podemos utilizar a função onclick no HTML para fazer eventos, exemplo:
 
