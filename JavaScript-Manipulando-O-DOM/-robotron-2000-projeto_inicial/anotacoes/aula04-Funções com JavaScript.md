@@ -19,5 +19,8 @@ Podemos passar também um parâmetro padrão que é "evento", exemplo:
             console.log("Oi");
     });
 
+Toda vez que acontecer o clique ele vai retornar tudo o que aconteceu.
+
+
 
 
