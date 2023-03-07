@@ -77,5 +77,14 @@ Temos como código final da aula02:
         lista.appendChild(novoItem);
     }
 
+-----------------------------------
+
+### Aula 03
+
+Explica um pouco sobre o localStorage.
+
+
+
+
 
 
