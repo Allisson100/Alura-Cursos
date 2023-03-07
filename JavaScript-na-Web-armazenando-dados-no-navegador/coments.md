@@ -83,6 +83,17 @@ Temos como código final da aula02:
 
 Explica um pouco sobre o localStorage.
 
+-----------------------------------
+
+### Aula 04
+
+Utilizamos o localStrage para armazenar o item:
+
+    localStorage.setItem("nome", nome);
+    localStorage.setItem("quantidade", quantidade);
+
+Porém temos que adicionar múltiplos itens nele ainda.
+
 
 
 
