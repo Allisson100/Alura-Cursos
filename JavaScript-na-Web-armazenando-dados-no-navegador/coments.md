@@ -94,6 +94,73 @@ Utilizamos o localStrage para armazenar o item:
 
 Porém temos que adicionar múltiplos itens nele ainda.
 
+-----------------------------------
+
+### Aula 05
+
+O localStorage só aceita elementos do tipo STRING.
+
+Então para organizar os elementos criamos um objeto chamado itemAtual:
+
+    const itemAtual = {
+        "nome": nome,
+        "quantidade": quantidade
+    }
+
+E criamos também um array:
+
+    const itens = [];
+
+Agora para gravar múltiplos itens nesse array utilizamos:
+
+    itens.push(itemAtual);
+
+E para gravar esse array no localStorage precisamos transformar os objetos presentes nele em uma String e para isso utilizamos:
+
+    JSON.stringify(itens)
+
+E temos como código final:
+
+    const form = document.getElementById("novoItem");
+    const lista =  document.getElementById("lista");
+    const itens = [];
+
+    form.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+
+        const nome = evento.target.elements['nome'];
+        const quantidade = evento.target.elements['quantidade'];
+
+        criaElemento(nome.value, quantidade.value);
+
+        nome.value = "";
+        quantidade.value = "";
+    })
+
+    function criaElemento(nome, quantidade) {
+        const novoItem = document.createElement('li')
+        novoItem.classList.add("item");
+
+        const numeroItem = document.createElement('strong');
+        numeroItem.innerHTML = quantidade;
+
+        novoItem.appendChild(numeroItem);
+        novoItem.innerHTML += nome;
+
+        lista.appendChild(novoItem);
+
+        const itemAtual = {
+            "nome": nome,
+            "quantidade": quantidade
+        }
+
+        itens.push(itemAtual);
+
+        localStorage.setItem("item", JSON.stringify(itens));
+    }
+
+
+
 
 
 
