@@ -159,6 +159,23 @@ E temos como código final:
         localStorage.setItem("item", JSON.stringify(itens));
     }
 
+-----------------------------------
+
+### Aula 06
+
+Nessa aula criamos uma condição no array onde ele vai ter o valor vazio ou vai ter o valor do localStorage itens se ele existir:
+
+const itens = JSON.parse(localStorage.getItem("itens")) || [];
+
+Utilizamos o JSON.parse para transformar o que era STRING em Obejto novamente, pois ele sendo objeto conseguimos utilizar o forEach caso contrário ele mostra um erro no console.
+
+    itens.forEach((elemento) => {
+        console.log(elemento.nome, elemento.quantidade);
+    })
+
+Quando queremos fazer um operação de loop para percorrer os elementos de um array, podemos simplesmente utilizar o forEach, nesse nosso é basicamente, para cada item do arry itens fazer um console.log no elementoAtual.nome e elementoAtual.quantidade.
+
+Muito  melhor do que utilizar uma estrutura de for padrão.
 
 
 
