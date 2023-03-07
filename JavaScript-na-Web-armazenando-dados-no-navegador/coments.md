@@ -1,4 +1,6 @@
-Evento de enviar é o submit>
+### Aula01
+
+Evento de enviar é o submit.
 
     const form = document.getElementById("novoItem");
 
@@ -18,7 +20,7 @@ Se colocarmos um console.log do evento ele vai nos retornar tudo o que está aco
         console.log(evento);
     })
 
------------------
+-----------------------------------
 
 evento.preventDefault();
 
@@ -37,6 +39,43 @@ Após o fim da aula temos como código final:
         console.log(evento.target.elements['quantidade'].value);
     })
 
-os comandos de console.log com target.elements nos retorna os valores obtidos dos inputs do formulário que no nossa caso é o nome e a quantidade.
+Os comandos de console.log com target.elements nos retorna os valores obtidos dos inputs do formulário que no nossa caso é o nome e a quantidade.
+
+-----------------------------------
+
+### Aula02
+
+const numeroItem = document.createElement('strong');
+numeroItem.innerHTML = quantidade;
+
+Essa linha de código cria um novo elemento que é a tag strong, mas com o inner.HTML nós acrescentamos entre as tags <strong>innerHTML</strong> o número da qua está na variável quantidade.
+
+Temos como código final da aula02:
+
+    const form = document.getElementById("novoItem");
+    const lista =  document.getElementById("lista");
+
+    form.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+
+        let nome = evento.target.elements['nome'].value;
+        let quantidade = evento.target.elements['quantidade'].value;
+
+        criaElemento(nome, quantidade);
+    })
+
+    function criaElemento(nome, quantidade) {
+        const novoItem = document.createElement('li')
+        novoItem.classList.add("item");
+
+        const numeroItem = document.createElement('strong');
+        numeroItem.innerHTML = quantidade;
+
+        novoItem.appendChild(numeroItem);
+        novoItem.innerHTML += nome;
+
+        lista.appendChild(novoItem);
+    }
+
 
 
