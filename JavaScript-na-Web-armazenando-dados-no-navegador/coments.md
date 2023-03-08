@@ -230,6 +230,63 @@ O código até final dessa aula:
         lista.appendChild(novoItem);    
     }
 
+Cookies, localStorage e sessionStorage são formas de armazenar dados no navegador, porém existem diferenças na usabilidade de cada um. Vamos conferir estas diferenças abaixo:
+
+- localStorage: guarda informações de forma persistente no navegador, sendo em média 5MB de armazenamento padrão, podendo variar dependendo do navegador utilizado. Este limite pode ser aumentado pelo usuário quando necessário, no entanto apenas alguns navegadores suportam isso. Os dados salvos são apenas do tipo string texto.
+
+- Cookies: guardam informações de forma persistente no navegador, sendo até 4KB de armazenamento por Cookie, bem menos que localStorage. Cada cookie é como se fosse um arquivo criado que guarda as informações de acesso da pessoa usuária, por exemplo, de qual local o site foi acessado, qual e-mail foi utilizado ao realizar login no navegador, e quais produtos de um site foram clicados. Para acessá-los, muitas empresas criam pop ups para confirmar a autorização do uso dessas informações, pois são consideradas sensíveis.
+
+- sessionStorage: é similar ao localStorage, sua diferença é que os dados não são salvos de forma persistente, ou seja, ao fechar o navegador eles são perdidos. Este tipo de armazenamento é utilizado quando queremos que a pessoa usuária utilize os dados apenas enquanto estiver com o site aberto.
+
+-----------------------------------
+
+### Aula 08
+
+Nessa aula a gente adicionou uma função para atualizar a quantidade de algum elemento caso já tenha repetido.
+
+Criamos a função :
+
+    function atualizaElemento(item) {
+        document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade;
+    }
+
+Ela basicamente pega o elemento através data id e diz q o novo valor (innerHtml) e fala que o novo valor é item.quantidade.
+
+Para conseguirmos acessar o elemento correto criamos uma constante que compara os nomes:
+
+    const existe = itens.find(elemento => elemento.nome === nome.value);
+
+Essa constante nos retorna o elemento da comparação, ou seja, se eu digito camisa preta e ainda não tem esse item na lista a const existe me retorna undefined, mas caso já exista uma elemento na lista chamado camisa preta ela irá retornar a tag do item em si.
+
+Depois criamos uma condição:
+
+    if (existe) {
+        itemAtual.id = existe.id
+
+        atualizaElemento(itemAtual);
+    } else  {
+
+        itemAtual.id = itens.length;
+
+        criaElemento(itemAtual);
+
+        itens.push(itemAtual);
+    }
+
+Caso a const existe seja verdadeira então adicione um id ali no objeto itemAtual com o valor de arry.length e jogue os objetos itemAtual na função atualizaElemento.
+
+Na função atualizaElemento:
+
+    function atualizaElemento(item) {
+        document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade;
+    }
+
+Ela pega o elemento através document.querySelector("[data-id='"+item.id+"']"), fala que queremos mexer no valor ali entre as tags (o innerHTML) e falamos que seu valor agora é item.quantidade, que nada mais é do que o valor novo que digitamos.
+
+E voltando lá na condição, se não existir o elemento digitado (else) vamos cria-lo, então chamamos a função criaElemento(itemAtual); e itens.push(itemAtual);
+
+Lá na função de criação dos li apenas adicionamos o numeroItem.dataset.id = item.id; para que o elemento novo criado tenha um data-id.
+
 
 
 
