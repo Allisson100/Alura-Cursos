@@ -305,6 +305,55 @@ Nessa aula eu arrumei o localStorage, pois no visual o código alterava o valor 
 
 Com esse código eu apenas disse que, se já existir o elemento (Camisa preta por exemplo), ele vai no item do array itens através do existe.id e vou subescrever com o novo valor, depois desssa condiçõ utilizamos o  localStorage.setItem("itens", JSON.stringify(itens));para setar o valor do array atualizado.
 
+-----------------------------------
+
+### Aula 10
+
+Arrow function não carrega o this.
+
+Criamos uma função para a criação do botão deletar no html.
+
+Como esse botão está sendo criado de acordo com as li, nnão é possível adicionar um addEventListener posteriormente, devemos utilizar o addEventListener já na criação do botão:
+
+    function botaoDeleta() {
+        const elementoBotao = document.createElement("button");
+        elementoBotao.innerText = "X";
+
+        elementoBotao.addEventListener("click", function() {
+            console.log(this);
+        })
+
+        return elementoBotao;
+    }
+
+O console.log(this) nos retorna o botão deletar exato que foi clicado na página.
+
+Agora adcionamos algumjas funções pra deletar o elemento li:
+
+    function botaoDeleta() {
+        const elementoBotao = document.createElement("button");
+        elementoBotao.innerText = "X";
+
+        elementoBotao.addEventListener("click", function() {
+            deletaElemento(this.parentNode);
+        })
+
+        return elementoBotao;
+    }
+
+    function deletaElemento (tag) {
+        tag.remove()
+    }
+
+deletaElemento(this.parentNode); - Nesse código eu chamo  afunção e passo como parâmetro a o pai da tag botão que foi clicado (this.parentNode).
+
+E com a função deletarElemento eu utilizo o .remove() que serve para deletar oi elemento em questão.
+
+
+
+
+
+
 
 
 
