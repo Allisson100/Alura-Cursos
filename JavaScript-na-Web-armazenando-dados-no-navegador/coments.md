@@ -287,6 +287,26 @@ E voltando lá na condição, se não existir o elemento digitado (else) vamos c
 
 Lá na função de criação dos li apenas adicionamos o numeroItem.dataset.id = item.id; para que o elemento novo criado tenha um data-id.
 
+-----------------------------------
+
+### Aula 09
+
+
+Nessa aula eu arrumei o localStorage, pois no visual o código alterava o valor caso fosse um item repetido, mas no localStorage não arrumava.
+
+    if (existe) {
+        itemAtual.id = existe.id
+
+        atualizaElemento(itemAtual);
+
+        itens[existe.id] = itemAtual;
+        
+    } else
+
+Com esse código eu apenas disse que, se já existir o elemento (Camisa preta por exemplo), ele vai no item do array itens através do existe.id e vou subescrever com o novo valor, depois desssa condiçõ utilizamos o  localStorage.setItem("itens", JSON.stringify(itens));para setar o valor do array atualizado.
+
+
+
 
 
 
