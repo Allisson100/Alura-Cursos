@@ -64,3 +64,8 @@ Outro exemplo, agora somando as tags que já existem e adcionando uma nova com o
     })
 
 Aqui basicamente ele diz que, caso aconteça um evento de click na tela e na codição de if dizemos: Se esse botão clicado tiver o id == 'jogar novamente' (e.target.id == 'jogar-novamente'), então recarregue a página (window.location.reload()).
+
+
+Site do jogo do Vercel:
+
+https://jogo-numero-secreto-7eqnxb1fr-allisson100.vercel.app/
