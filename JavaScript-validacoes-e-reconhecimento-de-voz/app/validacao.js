@@ -1,13 +1,15 @@
 function verificaSeOChutePossuiUmValorValido (chute) {
-    const numero = +chute;
+    const numero = +chute
 
     if (chuteForInvalido(numero)) {
-        elementoChute.innerHTML += '<div>Valor inválido<div/>';
+        elementoChute.innerHTML += '<div>Valor inválido</div>'
         return
     }
 
     if (numeroForMaiorOuMenorQueOValorPermitido(numero)) {
-        elementoChute.innerHTML += `<div>Valor inválido: Fale um número entre ${menorValor} e ${maiorValor}</div>`;
+        elementoChute.innerHTML += `
+        <div>Valor inválido: Fale um número entre ${menorValor} e ${maiorValor}</div>
+        `
         return
     }
 
@@ -30,14 +32,14 @@ function verificaSeOChutePossuiUmValorValido (chute) {
 }
 
 function chuteForInvalido(numero) {
-    return Number.isNan(numero)
+    return Number.isNaN(numero)
 }
 
 function numeroForMaiorOuMenorQueOValorPermitido(numero) {
     return numero > maiorValor || numero < menorValor
 }
 
-document.body.addEventListener("click", e => {
+document.body.addEventListener('click', e => {
     if (e.target.id == 'jogar-novamente') {
         window.location.reload();
     }

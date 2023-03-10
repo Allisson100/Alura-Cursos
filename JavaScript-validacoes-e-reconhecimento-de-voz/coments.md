@@ -68,4 +68,5 @@ Aqui basicamente ele diz que, caso aconteça um evento de click na tela e na cod
 
 Site do jogo do Vercel:
 
-https://jogo-numero-secreto-7eqnxb1fr-allisson100.vercel.app/
+https://jogo-reconhecimento-voz-correto-p5j2ze44i-allisson100.vercel.app/
+
