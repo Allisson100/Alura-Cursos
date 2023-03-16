@@ -101,4 +101,56 @@ No main.js estamos criando um novo array (let livrosComDesconto) e estamos dizen
 
 No metodoMap.js dizemos que o valor do desconto é 0.3 e dizemos que o array livrosComDesconto = o array de livros.map(). Lembrando que o método map() ele cria um novo array baseado em outro com as modificações que você passar, nesse caso nó dizemos que os objetos que estão no array livros vão se manter iguais {...livros,}, mas queremos uma modificação somente no preço que no caso vai ser o valor original - valor original * desconto. Então ele retorna esse novo array lembrando que usamos esse return, pois utilizamos esse método dos ..., e depois usamos outro return para retornar o valor do array na função.
 
+------------------------------------------
+
+### Método filter()
+
+    const botoes = document.querySelectorAll('.btn')
+    botoes.forEach(btn => btn.addEventListener('click', filtrarLivros))
+
+    function filtrarLivros () {
+        const elementoBtn = document.getElementById(this.id)
+        const categoria = elementoBtn.value
+
+        let livrosFiltrados = livros.filter(livro => livro.categoria == categoria)
+        
+        exibirOsLivrosNaTela(livrosFiltrados)
+        console.table(livrosFiltrados)
+    }
+
+Temos alguns botões na página para utilizar como filtro e utilizamos o método filter() para filtrar as categorias de cada livro.
+
+Nesse código utilizamos o querySelectorAll para pegar todos os botões e utilizamos o forEach para percorrer esse array de botões e chamar uma função caso algum deles for clicado.
+
+Dentro da função através da const elementoBtn pegamos o id do botão clicado (this.id) e com isso pegamos seu value e basicamente criamos um novo array para os livros filtrados e chamamos a função que cria os elementos na tela, mas passando como parâmetros o array dos livros filtrados.
+
+Lembrando que para dar certo isso, eu passei o inner.html da div que tem os livros como vazio antes da função criar realemnte os livros.
+
+Arquivo metodoForEach.js :
+
+    const elementoParaInserirLivros = document.getElementById('livros')
+
+    function exibirOsLivrosNaTela(listaDeLivros) {
+
+        elementoParaInserirLivros.innerHTML = ""
+
+        listaDeLivros.forEach(livro => {
+            elementoParaInserirLivros.innerHTML += `
+                <div class="livro">
+                <img class="livro__imagens" src="${livro.imagem}"
+                alt="${livro.alt}"/>
+                <h2 class="livro__titulo">
+                ${livro.titulo}
+                </h2>
+                <p class="livro__descricao">${livro.autor}</p>
+                <p class="livro__preco" id="preco">R$ ${livro.preco.toFixed(2)}</p>
+                <div class="tags">
+                <span class="tag">${livro.categoria}</span>
+                </div>                                                
+                </div>
+            `
+        })
+    }
+
+
 
