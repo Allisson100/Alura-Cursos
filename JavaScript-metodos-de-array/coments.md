@@ -63,3 +63,42 @@ Criamos uma nova função passando como parâmetro o array de livros.
 
 Nessa função utilizamos a função forEach, nela devemos utilizar uma arrow function e através de um template string criamos o código html para exibir na tela.
 
+------------------------------------------
+
+Fizemos uma pequena alteração no cóedigo. Separamos o comando do forEach em outro arquivo js e sepramos o comando mp() em outro:
+
+Arquivo main.js:
+
+    let livros = []
+
+    const endpointDaAPI = 'https://guilhermeonrails.github.io/casadocodigo/livros.json'
+
+    getBuscarLivrosDaAPI()
+
+
+    async function getBuscarLivrosDaAPI () {
+        const res = await fetch(endpointDaAPI)
+        livros = await res.json()
+        let livrosComDesconto = aplicarDesconto(livros)
+
+        exibirOsLivrosNaTela(livrosComDesconto)
+    }
+
+Arquivo metodoMap.js:
+
+
+    function aplicarDesconto(livros) {
+        const desconto = 0.3
+
+        livrosComDesconto = livros.map(livro => {
+            return {...livro, preco: livro.preco - (livro.preco * desconto)}
+        })
+
+        return livrosComDesconto
+    }
+
+No main.js estamos criando um novo array (let livrosComDesconto) e estamos dizendo que seu novo conteúdo vai sar o return da função aplicarDesconto(livros).
+
+No metodoMap.js dizemos que o valor do desconto é 0.3 e dizemos que o array livrosComDesconto = o array de livros.map(). Lembrando que o método map() ele cria um novo array baseado em outro com as modificações que você passar, nesse caso nó dizemos que os objetos que estão no array livros vão se manter iguais {...livros,}, mas queremos uma modificação somente no preço que no caso vai ser o valor original - valor original * desconto. Então ele retorna esse novo array lembrando que usamos esse return, pois utilizamos esse método dos ..., e depois usamos outro return para retornar o valor do array na função.
+
+
