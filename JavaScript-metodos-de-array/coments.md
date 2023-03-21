@@ -153,4 +153,38 @@ Arquivo metodoForEach.js :
     }
 
 
+------------------------------------------
+
+### Método Sort()
+
+O método sort() não apresenta uma ordenação estável, para isso temos que passar uma arrow function para que a função ordenen o array de forma correta.
+
+Exemplo:
+
+array = [0, 1, 2, 3, 10]
+
+array.sort()
+// 0, 1, 10, 2, 3
+
+Ele retona assim, pois ele compara uma unidade de cada vez, então o 1 do 10 é menor que o 2 por isso o 10 vem antes.
+
+Para arrumar isso de vemos escrever:
+
+array.sort((a, b) => a - b);
+
+Desse forma retorna 0, 1, 2, 3, 10.
+
+Isso porque nesse caso queremos em ordem crescente, ou seja, a função vai pegar dois valores e compara-los, 0 - 1, o resultado vai ser menor que 0 então o 0 fica antes do 1. 10 - 3, o resultado é maior que 0, então a funçõ entende que 10 é maior que 3 e assim sucessivamente. Caso quiser um array em ordem decrescente so trocar a - b por b - a.
+
+Agora no arquivo metodoSort.js digitamos:
+
+    let btnOrdenarPorPreco = document.getElementById("btnOrdenarPorPreco");
+    btnOrdenarPorPreco.addEventListener('click', ordenarLivrosPorPreco)
+
+    function ordenarLivrosPorPreco () {
+        let livrosOrdenados = livros.sort((a, b) => a.preco - b.preco)
+        exibirOsLivrosNaTela(livrosOrdenados)
+    }
+
+Basicamente adcionamos o evento de click no botão ordenar por preço e nele fizemos um sort no array livros e chamamos a função para exibir os livros na tela.
 
