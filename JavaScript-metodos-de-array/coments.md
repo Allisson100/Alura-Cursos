@@ -397,3 +397,5 @@ O método reduce executa uma função redutora para o elemento array, ele retorn
 [ ⚾ , 🏈, ⚽, 🏀, 🏐 ].keys() => ["0","1","2","3"]
 
 O método keys retorna um novo array composto pelas chaves (posições) do array o qual ele foi aplicado.
+
+FIM DO CURSO!!
