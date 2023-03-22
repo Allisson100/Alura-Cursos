@@ -188,3 +188,33 @@ Agora no arquivo metodoSort.js digitamos:
 
 Basicamente adcionamos o evento de click no botão ordenar por preço e nele fizemos um sort no array livros e chamamos a função para exibir os livros na tela.
 
+------------------------------------------
+
+### Método reduce()
+
+Ele pega os valores do array e combina eles, por exemplo:
+
+    precos = [10, 70, 20]
+
+    precoTotal  = precos.reduce((acc, atual) => acc + atual)
+
+    console.log(precoTotal) //Retorna 100
+
+Outro Exemplo:
+
+    precos = [10, 70, 20]
+
+    precoTotal  = precos.reduce((acc, atual) => acc > atual ? acc : atual)
+
+    console.log(precoTotal) //Retorna 70
+
+Ele basicamente compara os valores e retronar o maior valor do array.
+
+No projeto utilizamos:
+
+    function calcularValorTotalDeLivrosDisponiveis (livros) {
+        return livros.reduce((acc, livro) => acc + livro.preco, 0).toFixed(2)
+    }
+
+Ele pega o acc (acumulador) e vai somando os preços dos livros nele (apenas os livros disponiveis) e aquele 0 serve para dizer para o acc começar com o valor de 0, caso mude para 10 por exemplo ele vai somar os valores dos livros mais esse 10.
+
