@@ -282,9 +282,6 @@ Ficando com o código:
     var cep = document.getElementById("cep");
     cep.addEventListener("focusout", () => buscaEndereco(cep.value));
 
------------------------------------
-
-Vamos adicionar agora uma funcionalidade para aletar o usuário caso tenha algum erro:
 
 
 
