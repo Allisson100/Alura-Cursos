@@ -180,3 +180,7 @@ Criamos um laço de repetição também:
     }
 
 Ele serve para apagar os elemento filhos da ul para só depois através da função controiCard ele criar os videos que pesquisamos na busca.
+
+---------------------------------
+
+Mas o que é um endpoint? Basicamente, é a URL onde seu serviço pode ser acessado por uma aplicação.
