@@ -111,3 +111,72 @@ Criei outra função assincrona para onde pedimos a conexão da API, porém pass
 Requisições do tipo POST são usadas para enviar dados para a API. Por exemplo, criar um novo registro de usuário com: nome, idade e endereço de e-mail.
 
 Diferente de requisições do tipo GET, você precisará passar um objeto das opções de configuração como um segundo argumento em requisições POST.
+
+---------------------------------
+
+Criamos uma função para buscar videos na API.
+
+    import { conectaApi } from "./conectaAPI.js";
+    import constroiCard from "./mostrarVideos.js";
+
+    async function buscarVideo(e) {
+        e.preventDefault()
+
+        const dadosDePesquisa = document.querySelector("[data-pesquisa]").value
+        const busca = await conectaApi.buscaVideo(dadosDePesquisa)
+
+        const lista = document.querySelector("[data-lista]")
+
+        while (lista.firstChild) {
+            lista.removeChild(lista.firstChild)  
+        }
+
+        busca.forEach(e => lista.appendChild(constroiCard(e.titulo, e.descricao, e.url, e.imagem)))
+
+    }
+
+    const botaoDePesquisa = document.querySelector("[data-botao-pesquisa]")
+    botaoDePesquisa.addEventListener("click", e => buscarVideo(e))
+
+Primeiro ponto importante é que precisamos mostrar na tela somente o video com o filtro e oara isso exportamos a função do arquivo mostrarVideos.js:
+
+    export default function constroiCard(titulo, descricao, url, imagem) {
+        const video = document.createElement("li")
+        video.className = "videos__item"
+        video.innerHTML = `
+            <iframe width="100%" height="72%" src="${url}" title="${titulo}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope picture-in-picture" allowfullscreen></iframe>
+
+            <div class="descricao-video">
+                <img src="${imagem}" alt="logo canal alura">
+                <h3>${titulo}</h3>
+                <p>${descricao}</p>
+            </div>
+        `
+
+        return video
+    }
+
+Esse export default serve para exportar a função em específico, diferente do que eu fiz no arquivo conectaAPI.js onde eu atribui todas as funçãoes do arquivo em uma constante.
+
+Feito isso eu impoortei a função constroiCArd dentro do arquivo buscarVideos.js:
+
+    import constroiCard from "./mostrarVideos.js";
+
+Então fizemos uma função onde eu pegava oi valor do input de busca e mandava esse valor como parâmetro da função buscarVideo que tem no arquico conectaAPI.js:
+
+    async function buscaVideo(termoDeBusca) {
+        const conexao = await fetch(`http://localhost:3000/videos?q=${termoDeBusca}`)
+        const conexaoConvertida = await conexao.json()
+
+        return conexaoConvertida
+    }
+
+Essa função é interessante, pois atribuimos o valor do input dentro da url com o padrão ?q=${termoDeBusca} e com isso ele consegue fazer a busca através do termo de pesquisa e mostrar na tela so a busca em específico.
+
+Criamos um laço de repetição também:
+
+    while (lista.firstChild) {
+        lista.removeChild(lista.firstChild)  
+    }
+
+Ele serve para apagar os elemento filhos da ul para só depois através da função controiCard ele criar os videos que pesquisamos na busca.

@@ -9,7 +9,7 @@ async function criaVideo(titulo, descricao, url, imagem) {
     const conexao = await fetch("http://localhost:3000/videos", {
         method: "POST",
         headers: {
-            "Content-type": "aplication/json" //Serve para especificar que tipo de arquivo está sendo enviado.
+            "Content-type": "application/json" //Serve para especificar que tipo de arquivo está sendo enviado.
         },
         body: JSON.stringify({
             titulo: titulo,
@@ -19,12 +19,20 @@ async function criaVideo(titulo, descricao, url, imagem) {
         })
     })
 
-    const conexaoConvertida = await conexao.json();
+    const conexaoConvertida = await conexao.json()
+
+    return conexaoConvertida
+}
+
+async function buscaVideo(termoDeBusca) {
+    const conexao = await fetch(`http://localhost:3000/videos?q=${termoDeBusca}`)
+    const conexaoConvertida = await conexao.json()
 
     return conexaoConvertida
 }
 
 export const conectaApi = {
     listaVideos,
-    criaVideo
+    criaVideo,
+    buscaVideo
 }

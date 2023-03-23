@@ -90,6 +90,26 @@
       "url": "https://www.youtube.com/embed/ODEgEk83PLA",
       "imagem": "https://purr.objects-us-east-1.dream.io/i/OoNx6.jpg",
       "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "titulo": "Python para Data Science com Rafael Dias e Isabella Alvarez | Pílulas ONE",
+      "descricao": "4 mil vizualizações",
+      "url": "https://www.youtube.com/embed/Osulpg2Y-lA",
+      "imagem": "https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/01/07093212/PYTHON.png",
+      "id": 16
+    },
+    {
+      "titulo": "Python para Data Science com Rafael Dias e Isabella Alvarez | Pílulas ONE",
+      "descricao": "1 mil vizualizações",
+      "url": "https://www.youtube.com/embed/Osulpg2Y-lA",
+      "imagem": "https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/01/07093212/PYTHON.png",
+      "id": 17
     }
   ]
 }
