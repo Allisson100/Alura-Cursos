@@ -59,3 +59,52 @@ E depois usamos o numerosRepetidos.includes(cpf). Essa função ela retorna true
 
 --------------------------
 
+    campo.addEventListener("invalid", e => e.preventDefault());
+
+Utilizamos esse código para tirar as mensagens padrões do navegardor quando ocorre um erro no campo do formulário.
+Por exemplo quando colocamos no input do html um required caso quisermos apertar em um botão sem preencher esse campo, ele vai retornar um erro com um texto dizendo que aquele campo é obrigatório.
+
+Com esse código acima podemos tirar essas mensagens padrões e customiza-las da nossa meneira.
+
+--------------------------
+
+Fizemos o envio dos dados do formulário para o localStorage:
+
+    formulario.addEventListener("submit", e => {
+        e.preventDefault();
+
+        const listaRespostas = {
+            "nome": e.target.elements["nome"].value,
+            "email": e.target.elements["email"].value,
+            "rg": e.target.elements["rg"].value,
+            "cpf": e.target.elements["cpf"].value,
+            "aniversario": e.target.elements["aniversario"].value,
+        }
+
+        localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+
+        window.location.href = "./abrir-conta-form-2.html"
+    })
+
+Selecionamos os campos do formulario através da const listaRespostas e através do evento resgatamos os values de cada campo.
+
+--------------------------
+
+    const botaoIniciarCamera = document.querySelector("[data-video-botao]");
+    const campoCamera = document.querySelector("[data-camera]");
+    const video = document.querySelector("[data-video]");
+
+    botaoIniciarCamera.addEventListener("click", async function () {
+        const iniciarVideo = await navigator.mediaDevices.getUserMedia({video: true, audio: false});
+
+        botaoIniciarCamera.style.display = "none";
+        campoCamera.style.display = "block";
+
+        video.scrObject = iniciarVideo;
+    })
+
+Esse código ele pede solicitação para abrir a camera do usuário para ele tirar uma foto.
+
+Não esquecendo de passar o video.srcObject que faz referencia a tag video lá do html.
+
+
