@@ -107,4 +107,24 @@ Esse código ele pede solicitação para abrir a camera do usuário para ele tir
 
 Não esquecendo de passar o video.srcObject que faz referencia a tag video lá do html.
 
+--------------------------
+
+    botaoTirarFoto.addEventListener("click", function() {
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.heigth);
+
+        imagemURL = canvas.toDataURL("image/jpeg");
+
+        campoCamera.style.display = "none";
+        mensagem.style.display = "block";
+    })
+
+Esse código registra a foto tirada e posiciona ela no lugar do video.
+
+A tag canvas serve para desenhar elementos nela, então dizemos para ela desenhar a imagem do video (PRINT) no lugar onde estava posicionado o video.
+
+E usamos o imagemURL para armazenar a foto tirada.
+
+--------------------------
+
+
 
