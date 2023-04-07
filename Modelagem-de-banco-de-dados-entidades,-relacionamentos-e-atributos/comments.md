@@ -93,5 +93,50 @@ DER - Diagrama Entidade Relacionamento.
 
 O MER é um modelo conceitual usado para descrever os objetos (entidades) com suas características (atributos) e como elas se relacionam entre si (relacionamentos). Já o DER é uma representação gráfica que ajuda a visualizar as informações em situações práticas.
 
+### O que são entidades
+
+Entidade é um objeto único no mundo real.
+
+Exemplo:
+
+- Clientes de uma empresa;
+- Carros que são vendidos;
+- Departamento de vendas;
+- Pode ser abstrata ou concreta.
+
+Entidades são retângulos no diagrama.
+
+### Entidade forte x fraca
+
+- Entidade forte existe independentemente de outra entidade.
+- Tem chave primária.
+
+- Entidade fraca depende da existência de outra entidade.
+- Não tem chave primária.
+
+Entidade fraca vamos representar com um retangulo duplo.
+
+Definimos quais são as entidades fracas e fortes. Por enquanto ficou:
+
+Fortes:
+
+- Clientes: Pois podemos sim ter clientes sem necessariamente ele fazer um pedido, exemplo quando um usuário se cadastra para receber notícias em seu email sobre ofertas.
+
+- Editoras: Pois necessitamos das editoras para se ter os livros.
+
+Fracas:
+
+- Pedido: Pois precisamos de livros para se ter pedidos.
+
+- Livros: Se precisamos de livros para ter pedidos, precisamos de editoras para ter livros.
+
+- Estoque: Precisamos de livros também para ter estoque.
+
+É sempre bom estra alinhado com a regra de negócio da empresa que você está modelando o banco de dados, pois pode acontecer de você pensar na modelagem de um jeito e depois que você tem uma conversa com o representante da empresa você pense diferente a modelagem. Então é bom estar sempre alinhado com a empresa.
+
+
+
+
+
 
 
