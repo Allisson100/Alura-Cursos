@@ -238,9 +238,25 @@ Como sabemos, a entidade fraca não possui chave primária. Por esse motivo, pod
 
 Para essa chave que sai da entidade forte e chega na entidade fraca damos o nome de chave estrangeira. Poderíamos fazer uma analogia com a palavra estrangeira, já que ela originalmente pertence a outra entidade, e viaja até a entidade de destino.
 
+### Atributo de especialização
 
+Ele traz duas entidades ligadas a uma entidade.
 
+Exemplo pessoa física e jurídica.
 
+Seria basicamente um atributo com mais importancia.
+
+### Chave primária
+
+- Nunca se repete;
+
+- Não pode ser nulo;
+
+- Só entidades fortes possuem chave primária.
+
+![Banco de dados final do curso](img/Projeto%20final.JPG)
+
+FIM DO CURSO !!!
 
 
 
