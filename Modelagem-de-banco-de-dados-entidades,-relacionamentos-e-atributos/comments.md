@@ -194,6 +194,54 @@ Link do para saber mais sobre entidades associativas:
 
 https://cursos.alura.com.br/course/modelagem-banco-dados-entidades-relacionamentos-atributos/task/104825
 
+### Atributos
+
+Atributos são as carcterísticas das entidades.
+
+Eu não posso ter uma entidade sem atributos.
+
+No diagrama ele é representado por uma bolinha.
+
+Caracteríticas de atributo:
+
+- Valor único (atômico);
+
+- Mais de um valor (multivalorado);
+
+- Armazenados (são os atributos dos atributos, exemplo: atributo endereço e dentro dele tem outros atributos como a rua, estado, etc.);
+
+- Derivados (Exemplo: Temos o atributo data atual e data do meu aniversário, o atributos derivado seria minha idade, pois para calcula-la utilzamos a subtração de data atual - data aniversário);
+
+- Null (São campos não aplicavéis, as vezes tem um campo em um formulário que não é obrigatório e não faz sentido para aquela pessoa responder, nesse caso ele entra no banco de dados com null);
+
+- Obragatório (Not Null);
+
+- Opcional (Null).
+
+Os atributos descrevem as propriedades das entidades. Por exemplo, a entidade pessoa pode ter como atributos: nome,data de nascimento, idade, endereço. Assim como as entidades, também existem alguns tipos de atributos. São eles:
+
+- Atributo simples: É um tipo de atributo indivisível, ou seja, é um atributo atômico. Um exemplo deste tipo é o atributo CPF, pois ele não pode ser dividido em partes menores para formar outros atributos.
+
+- Atributo composto: Pode ser dividido em partes menores que representam outros atributos, como endereço. Ele pode ser subdividido em atributos menores, como: cidade,estado, rua, CEP.
+
+- Atributo multivalorado: É aquele que pode ter um ou N (vários) valores associados a ele. Por exemplo: o atributo telefone de um cliente. Este pode ter um ou vários telefones.
+
+- Atributo derivado e armazenado: Atributos derivados dependem de outro atributo ou até mesmo outra entidade para existir, como, idade e data de nascimento. Para descobrirmos a idade de uma pessoa, precisamos da sua data de nascimento. Então, consideramos o atributo idade como derivado do atributo data de nascimento, chamado, por sua vez, de atributo armazenado.
+
+- Atributo chave: É utilizado para identificar de forma única uma entidade, ou seja, os valores associados a esse atributo são distintos entre o conjunto de entidades. Como exemplo, podemos utilizar o Código do Produto. Ele é único e pode ser utilizado como atributo chave, uma vez que cada produto recebe apenas um Código distinto.
+
+### Chave estrangeira
+
+Como estudamos nas últimas aulas, a entidade fraca acaba recebendo a chave primária da entidade forte com a qual está associada para compor a chave parcial.
+
+Como sabemos, a entidade fraca não possui chave primária. Por esse motivo, podemos ter atributos identificadores próprios da entidade fraca que irão compor essa chave parcial. Além disso, temos a chave primária da entidade forte, que se desloca até a entidade fraca.
+
+Para essa chave que sai da entidade forte e chega na entidade fraca damos o nome de chave estrangeira. Poderíamos fazer uma analogia com a palavra estrangeira, já que ela originalmente pertence a outra entidade, e viaja até a entidade de destino.
+
+
+
+
+
 
 
 
