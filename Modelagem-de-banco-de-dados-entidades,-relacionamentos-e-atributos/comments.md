@@ -134,6 +134,51 @@ Fracas:
 
 É sempre bom estra alinhado com a regra de negócio da empresa que você está modelando o banco de dados, pois pode acontecer de você pensar na modelagem de um jeito e depois que você tem uma conversa com o representante da empresa você pense diferente a modelagem. Então é bom estar sempre alinhado com a empresa.
 
+### Relacionamento
+
+Na modelagem o losango representa o relacionamento.
+
+Temos o grau de relacionamento.
+
+Relacionamento binário: 
+    
+    Colaborador(a)(retangulo) ---> Trabalha em (losango) ---> Função (retangulo)
+
+Relacionamento ternário:
+ 
+    Colaborador(a)(retangulo) ---> Trabalha em(losango) ---> Função(retangulo)
+                                          ||
+                                          \/
+                                    Projeto 1(retangulo)
+
+Relacionamento n-ário:
+
+                                    Projeto 2(retangulo)
+                                            /\
+                                            ||
+    Colaborador(a)(retangulo) ---> Trabalha em(losango) ---> Função(retangulo)
+                                            ||
+                                            \/
+                                     Projeto 1(retangulo)
+
+
+Os parenteses que aparece quando criamos um novo relacionamento significa cardinalidade.
+
+Cardinalidade podemos dizer que é a conectividade, ou seja, tenho duas entidades que de alguma forma elas se conectam.
+
+Cardinalidade 1:1
+ 
+- Exemplo: Temos um gerente para cada área da empresa, podemos ter diversas áreas/departamentos, mas todas essas áreas teremos apenas 1 gerente por isso é 1:1.
+
+Cardinalidade 1:n
+
+- Exemplo: quando temos uma relação de departamento com funcionários. Temos um departamento onde podemos ter diversos funcionários, então por isso o 1:n.
+
+Cardinalidade N:N
+
+- Exemplo: podemos ter alguns livros em um pedido, mas podemos ter também o mesmo livro em diversos pedidos diferentes, por isso o N:N, pois é de muitos para muitos.
+
+
 
 
 
