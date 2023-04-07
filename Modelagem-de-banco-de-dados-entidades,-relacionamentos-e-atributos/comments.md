@@ -1,5 +1,7 @@
 # Começando curso
 
+<!-- ![Screenshot](img/img01.JPG) Adiciona imagem exemplo -->
+
 ### Diferença entre modelos 
 
 A modelagem de dados é um dos processos mais importantes ao se trabalhar em um projeto de banco de dados. Nele, os dados são levantados, tratados e estruturados para, assim, termos uma boa base para a construção de um banco de dados.
@@ -51,3 +53,29 @@ Durante o curso utilizamos o brModelo, mas o que nos levou a essa escolha? Essa 
 - trazer uma atenção especial aos atributos e todas as suas especificações;
 - possibilitar uma visualização mais “limpa” do esquema ao ocultar os atributos que não tenham relevância no modelo conceitual, mas que são relevantes no modelo lógico, por exemplo;
 - e possuir um dicionário de dados bem completo.
+
+### Mini-Mundo
+
+Existe um conceito chamado mini-mundo. O mini-mundo é considerado uma das etapas mais importantes do processo de modelagem dos dados, pois através desta etapa, entenderemos melhor como o banco de dados será estruturdo.
+
+No nosso exemplo, fizemos algumas perguntas para a diretoria para entendermos quais são as informações mais importantes que deveriam ser armazenadas e anotamos em um documento:
+
+- Queremos coletar os dados pessoais de nossos clientes, como se ele é pessoa física ou jurídica. No caso de PF o seu CPF e RG, e no caso de jurídica o CNPJ e IE. Além disso, queremos coletar e armazenar o seu nome, endereço, telefone e e-mail.
+
+- O produto principal do e-commerce são livros. Estes livros têm informações associadas a eles como o título, categoria, o ISBN (International Standard Book Number), o ano de publicação, o valor, a editora que publicou o livro, bem como o autor ou autora da obra.
+
+- Os livros são fornecidos por editoras. Precisamos ter guardados o telefone da editora, o nome de contato, o e-mail e no máximo 2 telefones.
+
+- Sabemos que não podemos ter o mesmo livro vindo de várias editoras. O livro é exclusivo de uma editora.
+
+- Nosso cliente pode comprar um ou mais livros através de um pedido de compra. Porém, sempre que ele faz uma compra precisamos verificar no estoque se o livro está ou não disponível antes de efetuar a operação.
+
+A modelagem de dados é a base para se ter um bom projeto final do banco de dados. Uma das etapas mais importantes deste processo é a entrevista com os(as) clientes, na qual serão identificadas as regras de negócio do projeto. Quando não identificamos as necessidades do projeto, pode surgir novamente a necessidade de realizar esta etapa, gerando assim, atraso em todo o processo.
+
+A entrevista dará todo o direcionamento ao nosso projeto. Através dela, conhecemos todos os detalhes do negócio e podemos estruturar os próximos passos. Um fator importante desse processo é saber de quem vamos colher as informações, ou seja, devemos entrevistar uma ou mais pessoas que possam passar todos os detalhes importantes do negócio.
+
+Outro fator é escolher as perguntas ideais para definir todos os pontos-chaves do projeto. Nessa etapa, a pessoa que faz a entrevista precisa ter um conhecimento prévio sobre os pontos mais relevantes para a construção do projeto, o que possibilita coletar informações realmente essenciais para a modelagem do banco de dados.
+
+Em resumo, a entrevista é a base para construir um projeto coerente e que atende às necessidades do(a) cliente.
+
+
