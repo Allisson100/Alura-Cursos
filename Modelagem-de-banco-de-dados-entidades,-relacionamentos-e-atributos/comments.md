@@ -178,6 +178,24 @@ Cardinalidade N:N
 
 - Exemplo: podemos ter alguns livros em um pedido, mas podemos ter também o mesmo livro em diversos pedidos diferentes, por isso o N:N, pois é de muitos para muitos.
 
+De acordo com as referências utilizadas para realizar os seus estudos, você pode encontrar uma outra forma de representar a cardinalidade mínima, conhecida como restrição de participação ou dependência de existência.
+
+A restrição de participação é utilizada para especificar se a existência da entidade depende da associação a uma outra entidade, ou seja, depende do relacionamento. Existem dois tipos de restrição de participação: restrição total e restrição parcial.
+
+A restrição total ocorre quando todas as instâncias de uma entidade X precisam estar obrigatoriamente relacionadas a alguma instância da entidade Y. Por exemplo: se nas regras de negócio do projeto foi levantado que todo(a) colaborador(a) precisa estar associado a um departamento para que a pessoa possa trabalhar na empresa, consideramos que a restrição de participação entre colaborador(a) e departamento é total, pois, ele/ela precisa estar trabalhando em, no mínimo, um departamento.
+
+Já a restrição parcial ocorre quando todas as instâncias de uma entidade X não precisam estar obrigatoriamente relacionadas a alguma instância da entidade Y. Por exemplo: todo departamento precisa ser gerenciado por um(a) colaborador(a), mas nem todo(a) colaborador(a) precisa ser gerente de um departamento. Então, consideramos que a restrição de participação entre a relação de colaborador(a) gerenciar um departamento é uma restrição parcial, pois nem todo(a) colaborador(a) irá gerenciar um departamento.
+
+### Entidade Associativa
+
+Quando temos relações de muito para muito podesmos utilizar uma entidade chamada de entidade associativa, pois as vezes essas relações de muito para muito pode ser confusa. No diagrama essa entidade associativa é representada por um retângulo com um losango dentro.
+
+Link do para saber mais sobre entidades associativas:
+
+https://cursos.alura.com.br/course/modelagem-banco-dados-entidades-relacionamentos-atributos/task/104825
+
+
+
 
 
 
