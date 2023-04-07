@@ -78,4 +78,20 @@ Outro fator é escolher as perguntas ideais para definir todos os pontos-chaves 
 
 Em resumo, a entrevista é a base para construir um projeto coerente e que atende às necessidades do(a) cliente.
 
+### MER X DER
+
+MER - Modelo Entidade Relacionamento.
+
+- Modelo conceitual.
+- Usado para descrever objetos, suas carcterísticas e como se relacionam.
+
+DER - Diagrama Entidade Relacionamento.
+
+- Representação gráfica do MER.
+- Muitas vezes é usado como sinônimo.
+- O diagrama facilita acomunicação entre todos.
+
+O MER é um modelo conceitual usado para descrever os objetos (entidades) com suas características (atributos) e como elas se relacionam entre si (relacionamentos). Já o DER é uma representação gráfica que ajuda a visualizar as informações em situações práticas.
+
+
 
