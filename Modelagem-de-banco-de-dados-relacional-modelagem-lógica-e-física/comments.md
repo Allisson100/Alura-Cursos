@@ -68,5 +68,6 @@ Esses são apenas alguns exemplos de tipos dados que podem ser utilizados para d
 
 O relacionamento identificador é aquele na qual uma ocorrência da entidade fraca, precisa estar associada a exatamente uma ocorrência da entidade forte e não pode existir sem ela. Nesse caso, esse relacionamento é utilizado para representar uma chave primária estrangeira. Já no relacionamento não identificador, cada ocorrência da entidade fraca pode ser identificada sem a necessidade de saber a qual ocorrência da entidade forte está associada. É utilizado para representar apenas chaves estrangeiras.
 
+![Modelo lógico no brModelo](img/03.JPG)
 
-
+![Modelo físico no SQL Power Architect](img/03.JPG)
