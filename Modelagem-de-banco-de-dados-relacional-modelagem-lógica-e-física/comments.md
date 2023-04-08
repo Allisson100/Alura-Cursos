@@ -24,3 +24,19 @@ Os atributos no modelo lógicos vão receber o nome de campo.
 
 As chaves pretas são as chaves primárias e as chaves verdes são as chaves estrangeiras.
 
+### SQL Power Architect
+
+Vamos utilizar esse software para fazer o modelo fisico do banco de dados.
+
+Aqui no modelo físico para representar os atributos vamos utilizar o nome colunas.
+
+Durante esse curso o instrutor utilizará o software SQL Power Architect para a criação do modelo físico do projeto, porém essa não é a única ferramenta existente para trabalharmos nessa etapa da modelagem. Apresentaremos aqui outras opções para que você experimente e aprenda um pouco mais sobre outros softwares que podem ser utilizados nesse processo.
+
+- O MySQL Workbench é uma ferramenta muito utilizada na modelagem de banco de dados. Trata-se de um software bem completo que nos possibilita criar todos os processos de modelagem de banco de dados além de fazer alterações no banco de dados, que normalmente seriam mais trabalhosas utilizando recursos-chave de modo que seja preciso menos tempo e esforço nesses processos.
+
+- A Astah Professional é outro software que consegue abranger todas as etapas do processo de modelagem de banco de dados. Ele permite gerar códigos a partir dos diagramas criados ou fazer uma engenharia reversa nos códigos existentes.
+
+- O DBDesigner 4 possui uma interface bem intuitiva o que facilita sua aplicação Ele é muito utilizado nas faculdades durante o processo de aprendizagem de modelagem. Essa ferramenta também pode ser utilizada em conjunto com o MySQL.
+
+A escolha do software vai depender muito da sua preferência e necessidade, já que a maior parte deles possuem funcionalidades parecidas. É interessante utilizar um software que já esteja no mercado a algum tempo e seja confiável, como todos esses exemplos que falamos aqui. Sugerimos que leia um pouco mais a fundo sobre o software que irá escolher para trabalhar antes de começar seu projeto, levando em conta as necessidades específicas do seu projeto.
+
