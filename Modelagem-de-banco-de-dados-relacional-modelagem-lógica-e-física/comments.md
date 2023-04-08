@@ -40,3 +40,33 @@ Durante esse curso o instrutor utilizará o software SQL Power Architect para a 
 
 A escolha do software vai depender muito da sua preferência e necessidade, já que a maior parte deles possuem funcionalidades parecidas. É interessante utilizar um software que já esteja no mercado a algum tempo e seja confiável, como todos esses exemplos que falamos aqui. Sugerimos que leia um pouco mais a fundo sobre o software que irá escolher para trabalhar antes de começar seu projeto, levando em conta as necessidades específicas do seu projeto.
 
+### Type
+
+O tipo da coluna. Esses tipos fazem referência ao domínio da coluna. O domínio designa o tipo de dado que será aceito na coluna.
+
+- VARCHAR: Aceita dados do tipo alfanuméricos, ou seja, tanto letras quanto números. Porém o número é tratado como texto e não como número. A vantagem disso é que quando temos um campo de cpf o número do tipo texto não ignora os 00 no começo dos números, diferente do número do tipo número onde quanlquer zero anterior nã tem valor nenhum e ele só ignora.
+
+- DATE: Serve para data.
+
+- INTERGER: Só aceita números inteiros.
+
+- DECIMAL e FLOAT: Trabalham com números decimais.
+
+- INT: armazena valores numéricos inteiros.
+
+- VARCHAR: armazena valores de string de tamanho variável de acordo com o seu limite.
+
+- CHAR: armazena valores de string de tamanho fixo.
+
+- TEXT: armazena valores de string de tamanho variável.
+
+- TIME: armazena apenas valores de hora.
+
+- TIMESTAMP: armazena valores de data e hora.
+
+Esses são apenas alguns exemplos de tipos dados que podem ser utilizados para definir o domínio de uma coluna. Essa utilização também pode variar de SGBD para SGBD.
+
+
+
+
+
