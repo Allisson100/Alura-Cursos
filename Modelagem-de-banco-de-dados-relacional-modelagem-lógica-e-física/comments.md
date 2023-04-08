@@ -66,7 +66,7 @@ O tipo da coluna. Esses tipos fazem referência ao domínio da coluna. O domíni
 
 Esses são apenas alguns exemplos de tipos dados que podem ser utilizados para definir o domínio de uma coluna. Essa utilização também pode variar de SGBD para SGBD.
 
-
+O relacionamento identificador é aquele na qual uma ocorrência da entidade fraca, precisa estar associada a exatamente uma ocorrência da entidade forte e não pode existir sem ela. Nesse caso, esse relacionamento é utilizado para representar uma chave primária estrangeira. Já no relacionamento não identificador, cada ocorrência da entidade fraca pode ser identificada sem a necessidade de saber a qual ocorrência da entidade forte está associada. É utilizado para representar apenas chaves estrangeiras.
 
 
 
