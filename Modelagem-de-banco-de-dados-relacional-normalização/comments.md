@@ -121,5 +121,20 @@ Procedimentos para aplicar a regra em Boyce-Codd:
 - Identificar todos os atributos que seja detreminado por outro atributo que não seja uma chave candidata.
 - Removê-los e levar para outra tabela.
 
+### Dependência multivalorada
 
+Como a DF é representado por X -> Y, a DMV é representado por X ->> Y.
+Lemos que X multi determina Y ou que Y é multi dependente de X.
+
+### Quarta forma normal - 4FN
+
+- Precisa estar na terceira forma normal 
+- Não ter mais de um atributo multivalorado.
+
+Na quarta forma não pode existir dependência multivalorada.
+
+Procedimento para aplicar a regra:
+
+- Identificar se existe um multi determinante que aponte para mais de um multi dependente.
+- Identificar se existe independência entre esses multi dependentes.
 
