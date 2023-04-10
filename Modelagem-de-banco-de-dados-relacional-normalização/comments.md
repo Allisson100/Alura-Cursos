@@ -64,3 +64,21 @@ A quarta forma normal deve satisfazer as propriedades baseadas na dependência M
 
 A quinta forma normal deve satisfazer as propriedades baseadas na dependência junção.
 
+### Primeira forma normal - 1FN
+
+Evitar ter mais de um assunto em uma tabela 
+
+Não admitir repetições ou campos que tenham mais que um valor.
+
+Procedimentos para aplicar a regra:
+
+- Identificar a chave primária da tabela
+- Identificar o grupo repetitivo e removê-lo da tabela.
+
+### Dependência Funcional Parcial
+
+Quando os atributos não-chave não dependem funcionalmente de toda a PK quando esta for composta.
+
+Existe uma dependência funcional, mas somente de uma parte da chave primária.
+
+
