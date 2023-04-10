@@ -106,4 +106,20 @@ Procedimentos para aplicar a regra:
 
 - Identificar todos os atributos que são funcionalmente dependentes de outros atributos não-chave e removê-los.
 
+### Dependência funcional trivial 
+
+X -> Y, se X não for uma chave candidata de determinada tabela.
+
+### Boyce-Codd
+
+Definimos que uma tabela está em FNBC se e somente se todos os determinantes são chaves candidatas.
+
+Superposição é quando existem chaves candidatas compostas com o atributo que se repete entre elas.
+
+Procedimentos para aplicar a regra em Boyce-Codd:
+
+- Identificar todos os atributos que seja detreminado por outro atributo que não seja uma chave candidata.
+- Removê-los e levar para outra tabela.
+
+
 
