@@ -96,3 +96,14 @@ Procedimento para aplicar a regra:
 
 Ela ocorre quando um atributo não-chave não depende da chave primária, mas depnde de outro atributo não-chave.
 
+### Terceira forma normal - 3FN
+
+Precisamos entender que para uma tabela estar na terceira forma normal, ela precisa, primeiro, estar na segunda forma normal e não ter nenhum atributo que dependa transitivamente de algum atributo não-chave.
+
+É valido alertar que este é um conceito para ser analisado com calma, pois em muitos sistemas de informação existe a necessidade de se armazenar o resultado de cálculos, totais e valores concolidados.
+
+Procedimentos para aplicar a regra:
+
+- Identificar todos os atributos que são funcionalmente dependentes de outros atributos não-chave e removê-los.
+
+
