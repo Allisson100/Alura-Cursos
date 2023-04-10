@@ -81,4 +81,18 @@ Quando os atributos não-chave não dependem funcionalmente de toda a PK quando 
 
 Existe uma dependência funcional, mas somente de uma parte da chave primária.
 
+### Segunda forma normal - 2FN
+
+Quando que uma tabela está na segunda forma normal?
+
+Se está na primeira forma normal e se os atributos que não são chave dependem da chave composta em sua totalidade.
+
+Procedimento para aplicar a regra:
+
+- Identificar se a tabela tem chave primária composta.
+- Identificar os atributos que dependem parcialmente dessa chave primária e criar uma nova tabela com eles.
+
+### Dependência transitiva
+
+Ela ocorre quando um atributo não-chave não depende da chave primária, mas depnde de outro atributo não-chave.
 
