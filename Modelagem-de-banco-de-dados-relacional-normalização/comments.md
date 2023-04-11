@@ -138,3 +138,25 @@ Procedimento para aplicar a regra:
 - Identificar se existe um multi determinante que aponte para mais de um multi dependente.
 - Identificar se existe independência entre esses multi dependentes.
 
+### Dependência de junção
+
+n-decomponível
+
+Onde "n" é maior que dois.
+
+Esse conceito só pode ser aplicdo em tabelas com mais de três atributos.
+
+- Se uma tabela A tem três atributos {a1, a2, a3}
+- Então existe três projeções possíveis para ela:
+
+A1: {a1, a2}
+A2: {a1, a3}
+A3: {a2, a3}
+
+### Quinta forma normal - 5FN
+
+- Está na quarta forma normal
+
+- Quando não possuir dependência de junção.
+
+
