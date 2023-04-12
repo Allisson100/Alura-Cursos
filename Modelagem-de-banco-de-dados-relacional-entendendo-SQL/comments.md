@@ -79,4 +79,27 @@ Datas:
 
 Mesmo com o padrão ANSI, cada SGBD tem seu manual com mais detalhes sobre tipos específicos. 
 
+### Alterando a tabela
+
+Vamos ter que alterar uma tabela para acrescentar a chave estrangeira para ter relações entre tabelas.
+
+Para isso digitamos:
+
+    alter table ESTOQUE add constraint CE_ESTOQUE_LIVROS
+    foreign key (ID_LIVRO)
+    references LIVROS (ID_LIVRO)
+    on delete no action
+    on update  no action;
+
+O alter table nome_da_tabela serve para alterar a tabela específica, no nosso caso a tabela ESTOQUE.
+
+Nós adiconamos uma restrição com add constraint e colocamos o nome de CE_ESTOQUE_LIVRO.
+
+Porém queremos que esse campo tenha o valor do ID_LIVRO, pois esse valor será nossa chave estrangeira.
+
+Então colocamos o foreing key (ID_LIVRO), dizendo que a chave estrangeira será o campo ID_LIVROS.
+
+E também fizemos a referencia para a tabela LIVROS com o comando references LIVROS (ID_LIVROS), para dizer que o ID_LIVRO é uma coluna da tabela LIVROS.
+
+Os comandos on delete no action e on update  no action, vão gerar um erro toda vez que alterar um livro que estiver na tabela ESTOQUE, mas não estiver registrado na tabela LIVROS.
 
