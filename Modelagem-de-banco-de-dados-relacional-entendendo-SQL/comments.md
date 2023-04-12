@@ -12,3 +12,71 @@ Vale ressaltar que atualmente a linguagem SQL tem suas limitações. Em tempos d
 
 É possível compreender que a linguagem SQL prevaleceu quando se diz respeito a modelos estruturados e com a padronização ANSI surgiram várias facilidades para empresas e desenvolvedores. Contudo, mesmo com desvantagens, o banco de dados relacional ainda é campeão para gerir o pagamento e recebimento de uma empresa, controlar o fluxo de produção e modelar quaisquer processos repetitivos.
 
+### Criando 
+
+Para criar o SCHEMA digitamos:
+
+    CREATE SCHEMA nome_do_banco;
+
+Dentro desse banco de dados vamos criar as tabelas.
+
+Criar tabelas:
+
+    create table LIVROS (
+        ID_LIVRO INT NOT NULL,
+        NOME_LIVRO VARCHAR(100) not null,
+        ALTORIA varchar(100) not null,
+        EDITORA varchar(100) not null,
+        CATEGORIA varchar(100) not null,
+        PREÇO decimal(5,2) not null,
+        
+        primary key (ID_LIVRO)
+    );
+
+Criamos a tabela com o create table nome_da_tabela.
+
+Depois definimos as colunas da tabela com o nome dela é o tipo dela.
+
+No caso do campo PREÇO utilizamos o decimal e ddefinimos nos parênteses dois valores. O primeiro diz quantos algarismos teremos no preço, no nosso caso é 5 sendo 3 algarismo para o valor inteiro e 2 para o valor dos centavos. E depois definimos quantas casas decimais teremos que nesse caso é duas casas após a virgula.
+
+### Tipos de dados em SQL
+
+Numéricos exatos:
+
+- Inteiros de vários tamanhos que podem ser formatados. Exemplo: 9.78 pode ser definida como decimal(3,2) 9 é número inteiro é do tipo int.
+- int, smallint, decimal(i,j), numeric(i,j), dec(i,j)
+
+Numéricos aproximados:
+
+- Números de ponto flutuante com precisão. Exemplo: 7.90 é do tipo float
+- float ou real, double precision
+
+Cadeias de caracteres:
+
+- Textos de tamanhos fixos. Exemplo: “modelagem” é char(9).
+- char(n) ou character(n)
+
+Cadeias de caracteres:
+
+- Textos de tamanhos fixos. Exemplo: “modelagem” é char(9).
+- char(n) ou character(n)
+
+- Texto de tamanho variável
+- varchar(n) ou char varying(n) ou character varying(n)
+
+Valores lógicos:
+
+- Termos que representa verdadeiro ou falso. Exemplo: true, false ou unknown
+- true, false ou unknown
+
+Datas:
+
+- Datas, dias, mês, anos. Exemplo: Calendário lunar, calendário comercial
+- Date DD-MM-YYYY ou YYYY-MM-DD-
+
+- Tempo. Exemplo: 10:59:13 é tipo HH:MM:SS
+- HH:MM:SS, timestamp
+
+Mesmo com o padrão ANSI, cada SGBD tem seu manual com mais detalhes sobre tipos específicos. 
+
+
