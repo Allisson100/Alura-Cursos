@@ -103,3 +103,42 @@ E também fizemos a referencia para a tabela LIVROS com o comando references LIV
 
 Os comandos on delete no action e on update  no action, vão gerar um erro toda vez que alterar um livro que estiver na tabela ESTOQUE, mas não estiver registrado na tabela LIVROS.
 
+### INSERT
+
+Para colocarmos os dados na tabela precisamos primeiro desabilitar as chaves estrenageiras para que as tabelas não tenham relação por enqaunto. Para isso digitamos:
+
+    set foreign_key_checks = 0; 
+
+Com isso as tabelas não estão mais relacionadas e a chave estrangeira está desabilitada.
+
+Agora vamos cadastrar um novo livro no banco de dados com o seguinte comando:
+
+    insert into livros values (
+        1,
+        "Percy Jackson e o ladrão de raios",
+        "Rick Riordan",
+        "Intrínseca",
+        "Aventura",
+        34.65
+    );
+
+O comando insert into nome_da_tabela values (), serve para cadastrarmos os itens dentro daquela tabela que no nosso caso é a tabela LIVROS.
+
+Depois o que for texto colocamos entre aspas e o que for número não precisamos colcoar entra aspas, mas devemos colocar o ponto caso tenha casas decimais.
+
+Para inserir vários linhas de uma vez na tabela livros digitamos:
+
+    insert into livros values
+        (2, "A volta ao mundo em 80 dias", "Júlio Verne", "Principis", "Aventura", 21.99),
+        (3, "O cortiço", "Aluísio de Azevedo", "Panda Books", "Romance", 47.80),
+        (4, "Dom Casmurro", "Machado de Assis", "Via Leitura", "Romance", 48)
+    ;
+
+Nesse caso é só colocar an informações entre parêteses e separa por vírgula.
+
+Caso quisermos colocar itens em ordem diferente por algum motivo, podemos digitar da seguinte maneira:
+
+
+
+
+
