@@ -156,6 +156,31 @@ De vez aparecer uma coluna com o título id_livro lá vai parecer o mesmo conte�
 
 Mas lembrando que isso não alteera o titulo, serve somente para aquela pesquisa em específico.
 
+## Filtros no SQL
+
+Se quisermos filtrar algum dados de alguma tabela podemos utilizar o comando wherer, exemplo:
+
+    select * from livros
+    where categoria = "biografia";
+
+Nesse caso ele vai pesquisar todos os dados da tabela livros, porém somente os dados onde (where) a categoria for igual ao texto "biografia".
+
+Se quisermos fazer um filtro ainda mais específico podemos digitar:
+
+    select * from livros
+    where categoria = "romance" and preço < 48;
+
+Nesse caso ele vai pesquisar na tabela livros onde a categoria for igual a romance e o preço for menor que 48. E utilizamos o comando AND para acrescentar mais filtros.
+
+Outro exemplo de filtro:
+
+    select * from livros
+    where categoria = "poesia" and not (autoria = "Luís Vaz de Camões" or autoria = "Gabriel Pedrosa");
+
+Nesse caso adiconamos um filtro onde a categoria teria que ser poesia, porém dentro dos elementos que contém a categoria poesia eu não queria os autores Luíz Vaz de Camões e Gabriel Pedrosa. Utilizamos o comando AND NOT juntos para tal filtro.
+
+
+
 
 
 
