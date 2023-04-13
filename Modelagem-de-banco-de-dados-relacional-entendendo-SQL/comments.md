@@ -138,6 +138,26 @@ Nesse caso é só colocar an informações entre parêteses e separa por vírgul
 
 Caso quisermos colocar itens em ordem diferente por algum motivo, podemos digitar da seguinte maneira:
 
+### Consultando dados
+
+Para consultar alguma tabela utilizamos:
+
+    select * from nome_da_tabela
+
+Se quisermos ver apenas um campo específico digitamos:
+
+    select nome_do_campo from nome_da_tabela
+
+Se quisermos apelidar o título da coluna por algum motivo digitamos:
+
+    select id_livro as "Código do Livro" from livros;
+
+De vez aparecer uma coluna com o título id_livro lá vai parecer o mesmo conteúdo do id_livro, mas com o título Código do Livro.
+
+Mas lembrando que isso não alteera o titulo, serve somente para aquela pesquisa em específico.
+
+
+
 
 
 
