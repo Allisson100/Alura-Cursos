@@ -179,6 +179,33 @@ Outro exemplo de filtro:
 
 Nesse caso adiconamos um filtro onde a categoria teria que ser poesia, porém dentro dos elementos que contém a categoria poesia eu não queria os autores Luíz Vaz de Camões e Gabriel Pedrosa. Utilizamos o comando AND NOT juntos para tal filtro.
 
+    select distinct id_livro from livros;
+
+O comando acima mostar todos os id_livro porem sem repetir número graças ao comando distinct.
+
+    select distinct id_livro from vendas
+    where id_vendedor = 1
+    order by id_livro;
+
+O comando order by serve para colcoar os itens em ordem do menor para o maior.
+
+### Deletando dados
+
+Para deletar algum dado utilizamos o comadno delete. Exemplo:
+
+    delete from livros where id_livro = 8;
+
+Nesse caso deletamos a linh com id_livro 8 da tabela livros.
+
+### Update
+
+Para atualizarmos algum valor da tabela podemos utilizar o comando update. Exemplo:
+
+    update livros set preço = 0.9*preço;
+
+Nesse caso falamos que queremos setar um preço onde preço vai ser igual a ele mesmo vezes 0.9.
+
+E para isso utilizamos o comando update e set .
 
 
 
