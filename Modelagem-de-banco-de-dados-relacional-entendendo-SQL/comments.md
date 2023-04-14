@@ -207,7 +207,21 @@ Nesse caso falamos que queremos setar um preço onde preço vai ser igual a ele 
 
 E para isso utilizamos o comando update e set .
 
+### Filtro usando duas tabelas
 
+    select vendas.id_vendedor, vendedores.nome_vendedor, sum(vendas.qtd_vendida)
+    from vendas, vendedores
+    where vendas.id_vendedor = vendedores.id_vendedor
+    group by vendas.id_vendedor;
+
+Bom, primeiro selecionamos os campos de cada tabela que queremos mostrar com select vendas.id_vendedor, vendedores.nome_vendedor, sum(vendas.qtd_vendida). Depois dissemo de onde são essas tabelas com from vendas, vendedores.
+
+Após isso utilizamos o where para dizer que vendas.id_vendedor é igual vendedores.id_vendedor, pois eles tem essa relação. Depois utilizei o group by vendas.id_vendedor para dizer ao comando sum la em cima que eu quero somar as vendar de cada vendedor específico.
+
+Nesse código estamos dizendo que o id_vendedor da tabela vendas tem relação com o id_vendedor da tabela vendedores.
+
+
+ 
 
 
 
