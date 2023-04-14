@@ -227,9 +227,40 @@ Nesse código estamos dizendo que o id_vendedor da tabela vendas tem relação c
     on vendas.id_vendedor = vendedores.id_vendedor
     group by vendas.id_vendedor;
 
-Esse código vai mostar a mesma tablea do código acima, mas dessa vez utilizamos o inner join.
+Esse código vai mostar a mesma tabela do código acima, mas dessa vez utilizamos o inner join.
 
- 
+### Mais informações
+
+Além de consultar os valores puramente como foram inseridos na tabela, é comum construirmos informações com métricas que resumem uma tabela. Isso pode ser feito com as funções de agregações, vamos entender cada um dos comandos:
+
+- MAX: a partir de um conjunto de valores é retornado o maior entre eles;
+- MIN: analisa um grupo de valores e retorna o menor entre eles;
+- SUM: calcula o somatório dos valores de um campo específico;
+- AVG: realiza a média aritmética dos valores de uma determinada coluna; e
+- COUNT: contabiliza a quantidade de linhas selecionadas.
+
+### Left e Right join
+
+    select livros.nome_livro,
+        vendas.qtd_vendida
+    from livros left join vendas
+    on livros.id_livro = vendas.id_livro
+    where vendas.qtd_vendida is null;
+
+Esse comando ele basicamente tras duas tabelas para serem comparadas uma do lado esquerdo e outra do lado direito, por conta do comando left join.
+
+    select 
+            vendas.id_livro,
+            livros.nome_livro,
+            vendas.qtd_vendida
+    from livros right join vendas
+    on livros.id_livro = vendas.id_livro;
+
+Nesse caso podemos observar que lguns livros estão com o valor nulo.
+
+Em resumo dessa aula, sabemos que faz diferença a ordem em que as tabelas são pesquisadas.
+
+
 
 
 
