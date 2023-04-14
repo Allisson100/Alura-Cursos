@@ -220,6 +220,14 @@ Após isso utilizamos o where para dizer que vendas.id_vendedor é igual vendedo
 
 Nesse código estamos dizendo que o id_vendedor da tabela vendas tem relação com o id_vendedor da tabela vendedores.
 
+### Inner join
+
+    select vendas.id_vendedor, vendedores.nome_vendedor, sum(vendas.qtd_vendida)
+    from vendas inner join vendedores
+    on vendas.id_vendedor = vendedores.id_vendedor
+    group by vendas.id_vendedor;
+
+Esse código vai mostar a mesma tablea do código acima, mas dessa vez utilizamos o inner join.
 
  
 
