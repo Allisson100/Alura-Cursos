@@ -84,6 +84,113 @@ Para colocar esse CSS no componente banner digitamos lá no arquivo Banner.js:
 
 Primeiro dentro do arquivo vamos criar o import do CSS e para chamá-lo no arquivo colocamos className, className porque estamos trabalhando com JSX. E lembrando que temos criar aquela estrutura semântica como se fosse o html normal, por isso criamos um header ali.
 
+### Criando novo componente de texto
+
+Vamos criar outra pasta em componentes chamada CampoTexto.
+
+E dentro dessa pasta vamos criar os arquivos CampoTexto.js e CampoTexto.css.
+
+Para uma questão de organização o arquivo chamado CampoTexto.js foi renomeado para index.js.
+
+Com isso na hora de fazer o import do arquivo ele não repetição de palavras:
+
+    import CampoTexto from './componentes/CampoTexto';
+
+Aqui a gente apenas declarou a importação da constante e dissemos a ele que ele está contido na pasta CampoTexto dentro da pasta componentes e como o arquivo chama index.js o próprio sistema já consegue entender que a const CampoTexto está naquele arquivo index.js.
+
+Lembrando que esse novo componente utilizamos uma forma diferente de escrita:
+
+    const CampoTexto = () => {
+        return (
+            <div>
+                <label>Nome</label>
+                <input />
+            </div>
+        )
+    }
+
+    export default CampoTexto
+
+Através de uma constante e arrow funtion criamos esse componente CampoTexto, lembrando que podemos escrever tanto como no caso do header como nesse caso, mas de acordo com o professor, essa forma com arrow funtion é mais utilizada.
+
+Por questão de organização também podemos encontrar em alguma estrutura de trabalha uma pasta Banner por exemplo e dentro dela teremos dois arquivos js um chamado Banner.js que é o do componente e outro chamdo index.js, porém nesse caso o arquivo Banner.js ele é exportado direto na constante:
+
+    export const Banner = () => {
+        return (
+            <header>
+                <img />
+            </header>
+        )
+    }
+
+E lá no arquivo index.js que está na mesma pasta importamos essa const e depois exportamos:
+
+    import { Banner } from "./Banner";
+
+    export default Banner
+
+E lá no arquivo principal App.js importamos esse arquivo index.js.
+
+Esse modelo é interessante, pois conseguimos com isso criar diversos banners diferentes e testá-los no layout e depois só expostarmos o banner que queremos sem a necessidade de ficar apagando os outros arquivos de banner.
+
+### Parâmetros
+
+Queremos enviar parâmetros, pois queremos um mesmo input, mas com labels diferentes.
+
+Lembrando que componentes são funções e conseguimos passar parâmetros para funções.
+
+O React entrega para nós um parâmetro chamado props, que são as propriedades que o componente recebeu.
+
+No JSX para eu conseguir imprimir o valor de uma variável eu preciso colocar entre chaves:
+
+import './CampoTexto.css'
+
+    const CampoTexto = (props) => {
+        return (
+            <div className="campo-texto">
+                <label>{props.label}</label>
+                <input placeholder='Digite o seu nome'/>
+            </div>
+        )
+    }
+
+    export default CampoTexto
+
+Essa parte do componente CampoTexto temos:
+
+    import './CampoTexto.css'
+
+    const CampoTexto = (props) => {
+        return (
+            <div className="campo-texto">
+                <label>{props.label}</label>
+                <input placeholder={props.placeholder}/>
+            </div>
+        )
+    }
+
+    export default CampoTexto
+
+E no arquivo App.js ficou:
+
+    import Banner from './componentes/Banner/Banner';
+    import CampoTexto from './componentes/CampoTexto';
+
+    function App() {
+    return (
+        <div className="App">
+        <Banner/>
+        <CampoTexto label="Nome" placeholder="Digite seu nome"/>
+        <CampoTexto label="Cargo" placeholder="Digite seu cargo"/>
+        <CampoTexto label="Imagem" placeholder="Informe o endereço de imagem"/>
+        </div>
+    );
+    }
+
+    export default App;
+
+Basicamente nós criamos um componente de input e de label e passamos "parâmetros" para que nós pudessemos reaproveitar o código.
+
 
 
 
