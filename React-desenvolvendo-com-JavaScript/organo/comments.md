@@ -191,6 +191,36 @@ E no arquivo App.js ficou:
 
 Basicamente nós criamos um componente de input e de label e passamos "parâmetros" para que nós pudessemos reaproveitar o código.
 
+### Criando formulário
+
+Vamos criar outra pasta dentro da pasta componentes chamada Formulário. E vamos criar o arquivo index.js e Formulario.css.
+
+    import CampoTexto from '../CampoTexto'
+    import './Formulario.css'
+
+    const Formulario = () => {
+        return (
+            <section className='formulario'>
+                <form>
+                    <h2>Preencha os dados para criar o card do colaborador</h2>
+                    <CampoTexto label="Nome" placeholder="Digite seu nome" />
+                    <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
+                    <CampoTexto label="Imagem" placeholder="Informe o endereço de imagem" />
+                </form>
+            </section>
+        )
+    }
+
+    export default Formulario
+
+Criamos essa estrutura de formulário onde basicamente tiramos o ele CampoTexto do App.js e colocamos nesse novo arquivo do formulário e por enquanto stamos seguindo essa estrutura básica de criar componentes.
+
+
+
+
+
+
+
 
 
 
