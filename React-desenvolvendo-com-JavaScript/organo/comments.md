@@ -215,6 +215,66 @@ Vamos criar outra pasta dentro da pasta componentes chamada Formulário. E vamos
 
 Criamos essa estrutura de formulário onde basicamente tiramos o ele CampoTexto do App.js e colocamos nesse novo arquivo do formulário e por enquanto stamos seguindo essa estrutura básica de criar componentes.
 
+### Lista dos times
+
+Vamos criar um novo componente chamado ListaSuspensa.
+
+No arquivo index.js desse novo componente digitamos:
+
+    import './ListaSuspensa.css'
+
+    const ListaSuspensa = (props) => {
+        return (
+            <div className='lista-suspensa'>
+                <label>{props.label}</label>
+                <select>
+                    {props.itens.map(item => <option key={item}>{item}</option>)}
+                </select>
+            </div>
+        )
+    }
+
+    export default ListaSuspensa
+
+Bom antes de explicar o código vale ressalta que o React, para entendermos melhor devemos entender que o projeto é basicamente a construçõ de diversos componentes. Exemplo: temos o form nesse projeto, mas dentro dele cada tag basicamente são um componente diferente, nesse nosso proejto temos o componente CampoTexto que são os inputs de texto, temos o input de opções que é outro componente e vale ressaltar que esse componente do select pode ser utilizados em diversas outras partes do código, pois os valores contidos nele são transmitidos através dos parâmetros do prop.
+
+Agora explicando o código, temos a estrutura bsica do componente com a const e return e dentro dele passamos o valor da label com o props e no select ele percorre com o map esses valores que estão no array e basicamente ele cria um opção para item do array. Lembrando que esse array já está pré definido no arquivo do formulário:
+
+    import CampoTexto from '../CampoTexto'
+    import ListaSuspensa from '../ListaSuspensa'
+    import './Formulario.css'
+
+    const Formulario = () => {
+
+        const times = [
+            'Programação',
+            'Front-End',
+            'Data Science',
+            'Devops',
+            'UX e Design',
+            'Mobile',
+            'Inovação e Gestão'
+        ]
+
+        return (
+            <section className='formulario'>
+                <form>
+                    <h2>Preencha os dados para criar o card do colaborador</h2>
+                    <CampoTexto label="Nome" placeholder="Digite seu nome" />
+                    <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
+                    <CampoTexto label="Imagem" placeholder="Informe o endereço de imagem" />
+                    <ListaSuspensa label="Time" itens={times}/>
+                </form>
+            </section>
+        )
+    }
+
+    export default Formulario
+
+Temos também o parâmetro Key que é semelhante ao ID, ele serve para judar o react a atualizar a lista basicamente e SEMPRE devemos lembrar que ele é um valor UNICO, não pode ocorrer alteração nele.
+
+Lembrando que a função map nos retorna um novo array, nesse caso é como se o map pegasse cada item do array e colocasse a tag options neles e o React vai interpretar esse array que o map trouxe e colocá-lo no código.
+
 
 
 
