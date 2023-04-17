@@ -310,8 +310,43 @@ O botão tem uma tag de abertura e fechamento <Botao></Botao>, esse é uma outra
 
 Nesse caso então tudo que estiver Dentro dessa tag botao, vai ser capturada pelo props.children, então se quisermos colocar um texto e depois uma tag img nós poderiamos fazer isso e o props.children capturaria tudo.
 
+### Escutando eventos
 
+Criamos uma função semelhante ao addEventListener que existe no Js padrão, mas no React ele fica com a seguinte sintaxe:
 
+    const aoSalvar = (evento) => {
+
+            evento.preventDefault()
+            console.log("Form foi submetido")
+        }
+
+        return (
+            <section className='formulario'>
+                <form onSubmit={aoSalvar}>
+
+Nós criamos a função aoSalvar e chamamos ela na tag form, e nela colocamos qual tipo de evento queremos ouvir que nesse caso é o submit, mas poderia ser um click ou keyup por exemplo.
+
+E utilizamos também uma forma de validação:
+
+    <CampoTexto obrigatorio={true} label="Nome" placeholder="Digite seu nome" />
+    <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" />
+    <CampoTexto label="Imagem" placeholder="Informe o endereço de imagem" />
+    <ListaSuspensa obrigatorio={true} label="Time" itens={times}/>
+
+Colocamos um obrigatorio={true}, esse obrigatorio faz referencia a tag required do html, onde significa que aquele campo é obrigatório.
+
+Mas devemos colocar nas tags que queremos o requirede da seguinte forma:
+
+    const CampoTexto = (props) => {
+        return (
+            <div className="campo-texto">
+                <label>{props.label}</label>
+                <input required={props.obrigatorio} placeholder={props.placeholder}/>
+            </div>
+        )
+    }
+
+É basicamente uma condição, se a tag do componente conter um obrigatório={true}, então a tag input html receberá umm parâmetro required, deixando aquele texto obrigatório.
 
 
 
