@@ -275,7 +275,40 @@ Temos também o parâmetro Key que é semelhante ao ID, ele serve para judar o r
 
 Lembrando que a função map nos retorna um novo array, nesse caso é como se o map pegasse cada item do array e colocasse a tag options neles e o React vai interpretar esse array que o map trouxe e colocá-lo no código.
 
+### Criando Botão
 
+Vamos criar uma nova pasta em componentes chamada Botao e nesssa pasta criaremos o index.js e o Botao.css.
+
+Dentro do index.js digitamos:
+
+    import './Botao.css'
+
+    const Botao = (props) => {
+        return (
+            <button className='botao'>
+                {props.children}
+            </button>
+        )
+    }
+
+    export default Botao
+
+Seguimos a estrutura padrão do componentes, mas agr utilizamos o {props.children}. Ele serve para no seguinte. No arquivo do fromulario adicionamos o botaõ da seguinte forma:
+
+    <form>
+        <h2>Preencha os dados para criar o card do colaborador</h2>
+        <CampoTexto label="Nome" placeholder="Digite seu nome" />
+        <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
+        <CampoTexto label="Imagem" placeholder="Informe o endereço de imagem" />
+        <ListaSuspensa label="Time" itens={times}/>
+        <Botao>
+            Criar Card
+        </Botao>
+    </form>
+
+O botão tem uma tag de abertura e fechamento <Botao></Botao>, esse é uma outra maneira de adicionarmos as tags.
+
+Nesse caso então tudo que estiver Dentro dessa tag botao, vai ser capturada pelo props.children, então se quisermos colocar um texto e depois uma tag img nós poderiamos fazer isso e o props.children capturaria tudo.
 
 
 
