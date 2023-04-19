@@ -348,6 +348,98 @@ Mas devemos colocar nas tags que queremos o requirede da seguinte forma:
 
 É basicamente uma condição, se a tag do componente conter um obrigatório={true}, então a tag input html receberá umm parâmetro required, deixando aquele texto obrigatório.
 
+### Manipulando o input do usuário
+
+Vamos pegar os valores que estão sendo colocados no input. Para isso no arquivo js do CampoTexto vamos as dicionar a função onChange:
+
+    let valor = 'Allisson'
+
+    const aoDigitado = (evento) => {
+        valor = evento.target.value
+        console.log(valor)
+    }
+
+    return (
+        <div className="campo-texto">
+            <label>{props.label}</label>
+            <input value={valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={placeholderModificada}/>
+        </div>
+    )
+
+Nós acrescentamos um evento no input onChage, esse vento é que toda mudança que ocorrer no input ele vai executar a função aoDigitado e nela vamos pegar o valor do input através do evento.target.value e aqui nada mais é que o javascript comum.
+
+### Controlando o estado
+
+Ainda no arquivo js do CampoTexto digitamos:
+
+    const [valor, setValor] = useState('Allisson')
+
+    const aoDigitado = (evento) => {
+        setValor(evento.target.value)
+        console.log(valor)
+    }
+
+    return (
+        <div className="campo-texto">
+            <label>{props.label}</label>
+            <input value={valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={placeholderModificada}/>
+        </div>
+    )
+
+Bom, ainda me parece um pouco confuso essa parte, mas com o tempo vou aprendendo.
+
+Mas a linha de código const [valor, setValor] = useState('Allisson'), basicamente nos permite que os valores sejam alterados tanto qui na variável valor como no input. 
+
+Nós setamos esse valor através do setValor(evento.target.value) e com isso conseguimos altera-lo normalmente e é claro que o useState pode ser uma string vazia ou com conteúdo e também nao podemos esquecer de importar esse useState import { useState } from 'react', pois é uma função do react em si.
+
+### Entendendo melhor o useState
+
+Ele é um hook do React, basicamente o React é utilizado para rendenizar partes de uma página e não recarregar a página inteira para alterar algum dado, mas quando a gente precisa que algo atualize nessa tela, isso precisa estar dentro de uma variável de estado que no caso é o nosso useState. porque assim o React entende que aquele valor que criamos vai ser comparado em algum momento quando sofrer alguma atualização.
+
+Então basicamente você tem um valor X e isso está armazenado na Dom virtual do react, quando essa variável X mudar para XY, o React vai compara a Dom birtual atual com a Dom antiga e vai perceber essa modificação e atualizar aquela parte da página.
+
+Exemplo contador que vi no vídeo.
+
+Outro exemplo:
+
+    let nome = 'Allisson'
+
+    Queremos colocar no input um value={nome}. 
+
+    Isso aqui vai colocar lá no input o nome Allisson, mas não vamos pode altera-lo por conta de uma situação do React que ele não permite.
+
+    Para resolver isso precisamos criar um estado nessa variavel nome e comom fazemos isso: Da seguinte forma:
+
+    cont [nome, setNome] = useState('')
+
+    <input value={nome} onChange={aoDigitado}/>
+
+    const aoDigitado = (evento) => {
+        setNome(evento.target.value)
+    }
+
+O que foi feito aqui?
+
+No js padrão nós teriamos que buscar o elemento no dom, pegar o valor daquele elemento, e depois manipula-lo.
+
+Aqui no React nós fizemos:
+
+Dissemos para o a tag input que se valor é a variável nome value={nome}.
+
+Quam é a variável nome?
+
+cont [nome, setNome] = useState('')
+
+Porém essa variável precisa ser atualizada toda vez que o usuário escrever lá no input. Então sabendo disso no colocamos um listener onChange chamando a função aoDigitado.
+
+O que essa função faz?
+
+Ela pega a variável setNome, esse setNome podemos interpretar como um clone da variável nome, e coloca nessa variável o valor de evento do listener. Vale lembrar que todo listener tem um evento, tem algo acontecendo e é isso que o parâmetro evento pega.
+
+Então nós pegamos esse evento.target.value, que é o valor que acabou deser digitado no input, e colocamos esse valor na variável setNome que por sua vez passa esse valor para a variável nome, ou seja, a variável nome é automaticamente atualizada e assim o value={nome} é atualizado.
+
+
+
 
 
 
