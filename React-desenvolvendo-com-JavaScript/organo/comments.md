@@ -438,6 +438,37 @@ Ela pega a variável setNome, esse setNome podemos interpretar como um clone da 
 
 Então nós pegamos esse evento.target.value, que é o valor que acabou deser digitado no input, e colocamos esse valor na variável setNome que por sua vez passa esse valor para a variável nome, ou seja, a variável nome é automaticamente atualizada e assim o value={nome} é atualizado.
 
+### Cadastrando Colaboradores
+
+Para cadastrar os colaboradores no array, nós adicionmos código do arquivo App.js e no index do formulário.
+
+App.js:
+
+    <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+
+    const aoNovoColaboradorAdicionado = (colaborador) => {
+        console.log(colaborador);
+        setColaboradores([...colaboradores, colaborador])
+    }
+
+Index formulário:
+
+    const aoSalvar = (evento) => {
+
+        evento.preventDefault()
+        props.aoColaboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+            time
+        })
+    }
+
+Aqui basicamente no formulário, quando tiver o evento de submit através dos props nós vamos passar para função aoColaboradorCadastrado um parâmetro com um objeto que são as variáveis contendo o nome, cargo, imagem e time do usuário.
+
+Lá no App.js ele pega esses dados e joga no array colaboradores. 
+
+Lembrando que o useSsate agora é um array e não uma string vazia.
 
 
 
