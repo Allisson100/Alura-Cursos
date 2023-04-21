@@ -529,6 +529,50 @@ Lembrando que no arquivo App.js também colocamos um array de times:
         }
     ]
 
+### Refatorando código duplicado
+
+Temos duas listas de times tanto no app.js como no index do formulário, então vamos arrumar isso.
+
+Nós tiramos aquela lista de times do index.js do formulário e passamos aqueles valores atrvés do map pelo App.js e pegamos esses valores com o props no index do formulário.
+
+    <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+
+Vale lembra que times={}, esse times é como se fosse uma variável que vai ser passada como parâmetro para o componente e lá dentro do componenete conseguimos pegar ele com o props.
+
+Esse time recebe como valor uma map, então a variável times vai ser um array de elemento que vai conter todos os dados do array principal time que contenha nome, ou seja, é como se eu escrevesse isso aqui:
+
+const newTimes = times.map((time) => time.nome)
+
+console.log: 
+
+//times: const times = [
+        {
+        nome: 'Programação',
+        corPrimaria: '#57C278',
+        corSecundaria: '#D9F7E9'
+        },
+        {
+        nome: 'Front-End',
+        corPrimaria: '#82CFFA',
+        corSecundaria: '#E8F8FF'
+        },
+        {
+            Outros times ...
+        }
+    ]
+
+//newTimes
+
+    newTimes = [
+        "Programação",
+        "Front-End"
+    ]
+
+Coloquei o nome de newTimes só para exemplificar, mas no projeto utilizamos o mesmo nome para ser mais consistente.
+
+
+
+
 
 
 
