@@ -570,8 +570,143 @@ console.log:
 
 Coloquei o nome de newTimes só para exemplificar, mas no projeto utilizamos o mesmo nome para ser mais consistente.
 
+### Card de colaborador
+
+Vamos criar um novo componente chamado colaborador, com a estrutura básica de index e css.
+
+Estrutura do colaborador:
+
+    import './Colaborador.css'
+
+    const Colaborador = () =>  {
+        return (
+            <div className='colaborador'>
+                <div className='cabecalho'>
+                    <img src="http://github.com/Allisson100.png" alt="Allisson Matheus" />
+                </div>
+                <div className='rodape'>
+                    <h4>Allisson Matheus</h4>
+                    <h5>Desenvolvedor</h5>
+                </div>
+            </div>
+        )
+    }
+
+    export default Colaborador
+
+Maneiras de utilizar props no exemplo do Colaborador:
+
+Maneira UM:
+
+    import './Colaborador.css'
+
+    const Colaborador = (props) =>  {
+        return (
+            <div className='colaborador'>
+                <div className='cabecalho'>
+                    <img src={props.imagem} alt={props.nome} />
+                </div>
+                <div className='rodape'>
+                    <h4>{props.nome}</h4>
+                    <h5>{props.cargo}</h5>
+                </div>
+            </div>
+        )
+    }
+
+    export default Colaborador
+
+Dessa forma utilizamos o props.algumacoisa para pegar os atributos que vem dele.
+
+Maneira DOIS:
+
+    import './Colaborador.css'
+
+    const Colaborador = ({ nome, imagem, cargo }) =>  {
+        return (
+            <div className='colaborador'>
+                <div className='cabecalho'>
+                    <img src={imagem} alt={nome} />
+                </div>
+                <div className='rodape'>
+                    <h4>{nome}</h4>
+                    <h5>{cargo}</h5>
+                </div>
+            </div>
+        )
+    }
+
+    export default Colaborador
+
+Temos que pensar que o props é um objeto grande com vários elementos e dessa forma DOIS nós desestruturamos esse objeto pegando somente o elemento que queremos utilizar.
+
+### Rendenização condicional
+
+    const Time = (props) => {
+
+        const css = { backgroundColor: props.corSecundaria }
+
+        return (
+
+            props.colaboradores.length > 0 &&
+
+            <section className='time' style={css}> 
+                <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+                <div className='colaboradores'>
+                    {props.colaboradores.map(colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/>)}
+                </div>
+            </section>
+        )
+    }
+
+Quando queremos criar alguma condição para rendenizar alguma section ou algo do tipo nós utilizamos a seguinte sintaxe:
+
+    props.colaboradores.length > 0 &&
+
+Isso aqui por debaixo do panos vai dizer ao javascript que se o array colaboradores.length for maior que 0, ou seja, se ele não estiver vazio rendeniza a aquela section. Caso a condição for falsa não faça nada.
+
+Lemrbando que no REACT não podemos escrever if e else como é normal no javascript.
+
+Esssa parte de condiçõe podemos fazer também com ternários. Exemplo:
+
+    const Time = (props) => {
+
+        const css = { backgroundColor: props.corSecundaria }
+
+        return (
+
+            (props.colaboradores.length > 0) ?
+
+                <section className='time' style={css}> 
+                    <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+                    <div className='colaboradores'>
+                        {props.colaboradores.map(colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/>)}
+                    </div>
+                </section>
+            :''
+        )
+    }
 
 
+Para limpar o campo de formulário nós devemos ligar as variáveis de estda dele lá no compornente index.js do formulário:
+
+    const aoSalvar = (evento) => {
+
+            evento.preventDefault()
+            props.aoColaboradorCadastrado({
+                nome,
+                cargo,
+                imagem,
+                time
+            })
+
+            setNome('')
+            setCargo('')
+            setImagem('')
+            setTime('')
+        }
+
+Essa função se refere ao evento de submit e após ela enviar os dados do colaborador ela esvazia a variável de estado.
 
 
 
