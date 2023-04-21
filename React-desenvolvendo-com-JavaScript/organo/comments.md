@@ -470,6 +470,70 @@ Lá no App.js ele pega esses dados e joga no array colaboradores.
 
 Lembrando que o useSsate agora é um array e não uma string vazia.
 
+### Criando o componente Time
+
+Vamos criar o componente Time na pasta componentes.
+
+E dentro dessa pasta vamos criar o arquivo index.js e Time.css
+
+index.js:
+
+    import './Time.css'
+
+    const Time = (props) => {
+
+        const css = { backgroundColor: props.corSecundaria }
+
+        return (
+            <section className='time' style={css}> 
+                <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+            </section>
+        )
+    }
+
+    export default Time
+
+Aqui criamos a estrutura padrão de componenetes. Nele adcionamos o fundo da seção e o título, e seus valores vem como parâmetros do props. Também adcionamos um estilo css inline, pois foi necessário isso pra que possamos utilizar variaveis como estilos lá no css.
+
+Vale ressaltar que quando é estilo utilizamos duas chaves ficando : qualquerNome={{nome_do_estilo: variavel do estilo}}.
+
+Já no arquivo App.js digitamos:
+
+    return (
+        <div className="App">
+        <Banner/>
+        <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+
+        {times.map(time => <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}/>)}
+        
+        </div>
+    );
+
+Utilizamos essa estrutra com map, pois queremos criar varios componetes Time aqui dentro, mas cada Time vai ter uma cor diferente em cada componente e essas cores são passadas através dos parâmetros.
+
+Lembrando que no arquivo App.js também colocamos um array de times:
+
+    const times = [
+        {
+        nome: 'Programação',
+        corPrimaria: '#57C278',
+        corSecundaria: '#D9F7E9'
+        },
+        {
+        nome: 'Front-End',
+        corPrimaria: '#82CFFA',
+        corSecundaria: '#E8F8FF'
+        },
+        {
+            Outros times ...
+        }
+    ]
+
+
+
+
+
+
 
 
 
