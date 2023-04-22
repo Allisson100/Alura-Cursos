@@ -722,6 +722,8 @@ Podemos usar o fragment também com <> </>.
 
 Fim do curso!
 
+Link do projeto feito na Vercel: https://primeiro-projeto-react-ecru.vercel.app/
+
 
 
 
