@@ -708,7 +708,17 @@ Para limpar o campo de formulário nós devemos ligar as variáveis de estda del
 
 Essa função se refere ao evento de submit e após ela enviar os dados do colaborador ela esvazia a variável de estado.
 
+E por fim adicionamos um rodapé.
 
+### Debugger
+
+Método para apurar o código lá no navegador.
+
+### Fragment
+
+<Fragment> <Fragment />é uma tag que o próprio React nos entrega quando precisamos fazer um wraped em varias tags difenretes, desse modo não precisamos criar uma divi para encapsular tudo. Lembrando que para utilizarmos precisamos importa-lo.
+
+Podemos usar o fragment também com <> </>.
 
 
 
